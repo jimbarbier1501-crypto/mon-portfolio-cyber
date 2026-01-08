@@ -183,3 +183,68 @@ nav a:hover, nav a.active {
     }
     .timeline-container::after { left: 31px; }
 }
+
+/* ========================================= */
+/*  6. PIED DE PAGE (FOOTER)  */
+/* ========================================= */
+
+footer {
+    background: rgba(10, 10, 15, 0.95);
+    border-top: 2px solid #00f2ff; /* Ta ligne néon */
+    padding: 40px 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: center;    /* Centre horizontalement */
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.footer-content {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.footer-tagline {
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #00f2ff;
+    margin-bottom: 20px;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Espace entre LinkedIn, la barre | et le nom */
+    flex-wrap: wrap;
+}
+
+.linkedin-link {
+    color: #ffffff;
+    text-decoration: none; /* Enlève le soulignement */
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.linkedin-link i {
+    margin-right: 8px;
+    color: #00f2ff; /* L'icône en Cyan */
+    font-size: 1.2rem;
+}
+
+.linkedin-link:hover {
+    color: #00f2ff;
+    text-decoration: none; /* Garde le soulignement invisible au survol */
+    text-shadow: 0 0 10px #00f2ff;
+}
+
+.footer-sep {
+    color: #333;
+    font-weight: bold;
+}
