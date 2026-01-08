@@ -22,29 +22,30 @@
     </header>
 
     <main class="contact-page">
-        <h1 class="main-page-title" data-aos="fade-down">Transmission de Message</h1>
-        <p class="section-intro" data-aos="fade-up">Intéressé par mon profil ? Initialisez une communication sécurisée via le formulaire ci-dessous.</p>
+        <h1 class="main-page-title" data-aos="fade-down">Formulaire de Contact</h1>
+        <p class="section-intro" data-aos="fade-up">Un projet ou une opportunité ? Discutons des solutions adaptées à vos besoins techniques.</p>
 
         <section class="contact-container" data-aos="zoom-in">
-            <form class="cyber-form">
+            <form class="cyber-form" action="https://formspree.io/f/mykzrlqj" method="POST">
+                
                 <div class="form-group">
                     <label for="name"><i class="fas fa-user"></i> Nom complet</label>
-                    <input type="text" id="name" placeholder="NOM_COMPLET" required>
+                    <input type="text" name="name" id="name" placeholder="NOM_COMPLET" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                    <input type="email" id="email" placeholder="ADDRESS@EXEMPLE.COM" required>
+                    <input type="email" name="email" id="email" placeholder="ADDRESS@EXEMPLE.COM" required>
                 </div>
 
                 <div class="form-group">
                     <label for="subject"><i class="fas fa-tag"></i> Sujet</label>
-                    <input type="text" id="subject" placeholder="OBJET_DE_VOTRE_DEMANDE">
+                    <input type="text" name="subject" id="subject" placeholder="OBJET_DE_VOTRE_DEMANDE">
                 </div>
 
                 <div class="form-group">
                     <label for="message"><i class="fas fa-comment-dots"></i> Message</label>
-                    <textarea id="message" rows="5" placeholder="SAISISSEZ_VOTRE_MESSAGE_ICI..." required></textarea>
+                    <textarea name="message" id="message" rows="5" placeholder="SAISISSEZ_VOTRE_MESSAGE_ICI..." required></textarea>
                 </div>
 
                 <button type="submit" class="submit-btn">
