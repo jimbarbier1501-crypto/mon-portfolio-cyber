@@ -389,87 +389,107 @@ footer {
 .timeline {
     position: relative;
     max-width: 1000px;
-    margin: 50px auto;
-    padding: 20px 0;
+    margin: 60px auto;
+    padding: 40px 0;
 }
 
-/* Ligne centrale */
 .timeline::after {
     content: '';
     position: absolute;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, #00f2ff, transparent);
+    width: 1px;
+    background: linear-gradient(to bottom, 
+        transparent, 
+        rgba(0, 242, 255, 0.8) 15%, 
+        rgba(0, 242, 255, 0.8) 85%, 
+        transparent);
     top: 0;
     bottom: 0;
     left: 50%;
-    margin-left: -1px;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
 }
 
 .timeline-item {
-    padding: 20px 40px;
+    padding: 30px 60px;
     position: relative;
     width: 50%;
     box-sizing: border-box;
 }
 
-/* Positionnement alterné */
-.timeline-item:nth-child(odd) { left: 0; text-align: right; }
-.timeline-item:nth-child(even) { left: 50%; text-align: left; }
-
-/* Point lumineux */
-.timeline-dot {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background: #0a0a0f;
-    border: 2px solid #00f2ff;
-    border-radius: 50%;
-    top: 30px;
-    z-index: 10;
-    box-shadow: 0 0 10px #00f2ff;
-}
-
-.timeline-item:nth-child(odd) .timeline-dot { right: -7px; }
-.timeline-item:nth-child(even) .timeline-dot { left: -7px; }
-
-/* Styles du contenu */
+/* Bulles de dates plus marquées */
 .timeline-date {
     font-family: 'Courier New', monospace;
     color: #00f2ff;
     font-weight: bold;
-    margin-bottom: 8px;
-    font-size: 1rem;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.5);
+    display: block;
 }
 
+/* Cartes de contenu style "Terminal" */
 .timeline-content {
-    background: rgba(10, 10, 20, 0.8);
-    padding: 25px;
-    border-radius: 4px;
-    border: 1px solid rgba(0, 242, 255, 0.2);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+    background: rgba(5, 5, 10, 0.9);
+    padding: 30px;
+    border-radius: 2px; /* Coins carrés pour un look plus pro/militaire */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid #00f2ff; /* Accentuation sur le côté */
+    position: relative;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.timeline-content:hover {
+/* Effet au survol */
+.timeline-item:hover .timeline-content {
+    transform: scale(1.02);
     border-color: #00f2ff;
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(0, 242, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
 }
 
-/* Mise en évidence de l'étape actuelle */
+/* Style de l'étape actuelle (Highlight) */
 .timeline-item.current .timeline-content {
-    border: 1px solid #00f2ff;
-    background: rgba(0, 242, 255, 0.05);
+    background: rgba(0, 242, 255, 0.03);
+    border-left: 4px solid #00f2ff;
+    animation: pulse-border 2s infinite;
 }
 
-.timeline-content h3 { color: #fff; margin: 0 0 10px 0; font-size: 1.2rem; }
-.timeline-content .location { color: #00f2ff; font-size: 0.85rem; margin-bottom: 12px; font-weight: 600; }
-.timeline-content p { color: #ccc; line-height: 1.6; font-size: 0.95rem; margin: 0; }
+@keyframes pulse-border {
+    0% { border-left-color: #00f2ff; }
+    50% { border-left-color: #004e92; }
+    100% { border-left-color: #00f2ff; }
+}
 
-/* Mobile Responsive */
+/* Icônes de titre */
+.timeline-content h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.timeline-content .location {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: #00f2ff;
+    opacity: 0.8;
+}
+
+/* Points de connexion sur la ligne */
+.timeline-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: #00f2ff;
+    border: 4px solid #0a0a0f;
+    border-radius: 50%;
+    top: 40px;
+    z-index: 10;
+    box-shadow: 0 0 15px #00f2ff;
+}
+
+/* Responsive amélioré */
 @media screen and (max-width: 768px) {
-    .timeline::after { left: 30px; }
-    .timeline-item { width: 100%; padding-left: 60px; padding-right: 20px; text-align: left !important; }
-    .timeline-item:nth-child(even) { left: 0; }
-    .timeline-dot { left: 23px !important; }
+    .timeline::after { left: 20px; }
+    .timeline-item { width: 100%; padding-left: 50px; text-align: left !important; }
+    .timeline-dot { left: 14px !important; }
+    .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; }
 }
