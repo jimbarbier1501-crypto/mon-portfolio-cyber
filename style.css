@@ -310,10 +310,14 @@ footer {
     color: #e0e0e0;
 }
 
-.skill-info .pct {
+.skill-info .level {
     color: #00f2ff;
     font-weight: bold;
     font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px rgba(0, 242, 255, 0.5);
 }
 
 .skill-bar {
