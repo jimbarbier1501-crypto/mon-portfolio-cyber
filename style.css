@@ -366,3 +366,18 @@ footer {
 
 .cert-item h4 { color: #fff; margin: 0; }
 .cert-item p { color: #888; margin: 5px 0 0; font-size: 0.85rem; }
+
+.skill-bar {
+    height: 2px; /* Réduit de 8px à 2px pour faire une ligne */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, transparent, #00f2ff, transparent); /* Effet fondu aux extrémités */
+    box-shadow: 0 0 8px rgba(0, 242, 255, 0.6);
+    border-radius: 2px;
+}
