@@ -22,52 +22,49 @@
     </header>
 
     <main class="projects-page">
-        <h1 class="main-page-title" data-aos="fade-down">Projets & Réalisations</h1>
-        <p class="section-intro" data-aos="fade-up">Démonstrations techniques : de l'infrastructure conteneurisée au développement sécurisé.</p>
+        <h1 class="main-page-title" data-aos="fade-down">Réalisations Techniques</h1>
+        <p class="section-intro" data-aos="fade-up">Environnements de test, infrastructures conteneurisées et scripts de développement.</p>
 
         <section class="projects-grid">
-            <article class="project-card" data-aos="zoom-in">
-                <div class="project-img">
-                    <img src="images/docker-infra.jpg" alt="Infrastructure Docker">
-                    <div class="project-status">Opérationnel</div>
+            <article class="project-card" data-aos="fade-up">
+                <div class="card-header">
+                    <i class="fab fa-docker"></i>
+                    <span class="status">Live</span>
                 </div>
                 <div class="project-info">
                     <h3>Infrastructure Multi-Services</h3>
-                    <p>Déploiement d'une application To-Do List via <strong>Docker Compose</strong>. Architecture incluant un reverse-proxy <strong>Nginx</strong>, un backend Flask et une base de données <strong>PostgreSQL</strong> sécurisée.</p>
+                    <p>Architecture complète utilisant <strong>Docker Compose</strong>. Orchestration d'un serveur Web <strong>Nginx</strong> servant de Reverse-Proxy pour un backend <strong>Flask</strong> connecté à une base de données <strong>PostgreSQL</strong>.</p>
                     <div class="project-tags">
-                        <span>Docker</span><span>Nginx</span><span>Postgres</span>
+                        <span>Conteneurisation</span><span>Isolation</span><span>Micro-services</span>
                     </div>
-                    <a href="https://github.com/ton-github" class="btn-project" target="_blank">Consulter le Repo <i class="fab fa-github"></i></a>
                 </div>
             </article>
 
-            <article class="project-card" data-aos="zoom-in" data-delay="100">
-                <div class="project-img">
-                    <img src="miniature.jpg" alt="Portfolio Cyber">
-                    <div class="project-status">En cours</div>
+            <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">
+                    <i class="fas fa-shield-alt"></i>
+                    <span class="status">Dev</span>
                 </div>
                 <div class="project-info">
                     <h3>Cyber Portfolio v1.0</h3>
-                    <p>Conception et développement de ce portfolio. Focus sur l'identité visuelle "Cyber-Ops", l'optimisation du code et l'hébergement sécurisé via <strong>GitHub Pages</strong>.</p>
+                    <p>Développement d'une interface sécurisée et optimisée. Travail sur l'accessibilité, la performance du code et le déploiement automatisé via des workflows CI/CD.</p>
                     <div class="project-tags">
-                        <span>HTML/CSS</span><span>JS</span><span>GitHub</span>
+                        <span>Security Design</span><span>Frontend</span><span>Git</span>
                     </div>
-                    <a href="#" class="btn-project">Site Actuel <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </article>
 
-            <article class="project-card" data-aos="zoom-in" data-delay="200">
-                <div class="project-img">
-                    <img src="images/flask-dev.jpg" alt="App Flask">
-                    <div class="project-status">Labo</div>
+            <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="card-header">
+                    <i class="fab fa-python"></i>
+                    <span class="status">Lab</span>
                 </div>
                 <div class="project-info">
-                    <h3>Développement Micro-services</h3>
-                    <p>Création d'applications web avec le framework <strong>Flask</strong>. Gestion des routes, des templates Jinja2 et manipulation de données dynamiques via Python.</p>
+                    <h3>Logiciels & Scripts Flask</h3>
+                    <p>Conception d'applications web dynamiques. Implémentation de logique métier en Python, gestion des sessions utilisateurs et sécurisation des points d'entrée (API).</p>
                     <div class="project-tags">
-                        <span>Python</span><span>Flask</span><span>Backend</span>
+                        <span>Python</span><span>Jinja2</span><span>Backend</span>
                     </div>
-                    <a href="https://github.com/ton-github" class="btn-project" target="_blank">Code Source <i class="fab fa-github"></i></a>
                 </div>
             </article>
         </section>
