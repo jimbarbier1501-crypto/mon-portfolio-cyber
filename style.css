@@ -539,7 +539,7 @@ footer {
 }
 
 /* ========================================= */
-/* 8. PAGE PROJETS      */
+/* 8. PAGE PROJETS (STYLE CYBER-TECH)        */
 /* ========================================= */
 
 .projects-grid {
@@ -555,11 +555,12 @@ footer {
     background: linear-gradient(145deg, rgba(10, 10, 25, 0.9), rgba(5, 5, 15, 1));
     border: 1px solid rgba(0, 242, 255, 0.1);
     border-radius: 4px;
-    padding: 40px 30px;
+    padding: 35px 30px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -568,35 +569,46 @@ footer {
     transform: translateY(-8px);
 }
 
+/* --- CONTENEUR ICÔNES --- */
 .card-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 25px;
 }
 
-/* Style des Icônes */
-.card-header i {
-    font-size: 2.5rem; /* Plus grand pour compenser l'absence d'image */
+.tech-icon-circle {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 242, 255, 0.05);
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+    transition: 0.3s;
+}
+
+.tech-icon-circle i {
+    font-size: 1.8rem;
     color: #00f2ff;
-    filter: drop-shadow(0 0 8px rgba(0, 242, 255, 0.6));
+    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.4));
 }
 
-.status {
-    font-family: 'Courier New', monospace;
-    font-size: 0.75rem;
-    color: #00f2ff;
-    border: 1px solid rgba(0, 242, 255, 0.5);
-    padding: 3px 10px;
-    letter-spacing: 1px;
+.project-card:hover .tech-icon-circle {
+    border-color: #00f2ff;
+    background: rgba(0, 242, 255, 0.1);
 }
 
+/* --- TEXTE ET INFOS --- */
 .project-info h3 {
     color: #fff;
     font-size: 1.4rem;
     margin-bottom: 15px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-family: 'Orbitron', sans-serif; /* Si tu as cette police, sinon sans-serif */
 }
 
 .project-info p {
@@ -606,19 +618,38 @@ footer {
     margin-bottom: 25px;
 }
 
-.project-tags {
+/* --- NOUVELLES BALISES (CYBER TAGS) --- */
+.project-tags-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-top: auto; /* Pousse les tags vers le bas */
+    gap: 8px;
+    margin-top: auto; /* Aligne les tags au bas de la carte */
+    padding-top: 10px;
 }
 
-.project-tags span {
+.cyber-tag {
+    font-family: 'Courier New', monospace;
     font-size: 0.7rem;
+    font-weight: bold;
     color: #00f2ff;
     background: rgba(0, 242, 255, 0.05);
-    padding: 5px 12px;
-    border: 1px solid rgba(0, 242, 255, 0.2);
-    border-radius: 2px;
-    font-family: 'Courier New', monospace;
+    border: 1px solid rgba(0, 242, 255, 0.4);
+    padding: 4px 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .cyber-tag {
+    background: rgba(0, 242, 255, 0.1);
+    border-color: #00f2ff;
+    box-shadow: 0 0 8px rgba(0, 242, 255, 0.2);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
 }
