@@ -383,7 +383,7 @@ footer {
 }
 
 /* ========================================= */
-/* 8. PAGE COMPÉTENCES (STYLE DASHBOARD) */
+/* 8. PAGE PARCOURS (TIMELINE TACTIQUE)      */
 /* ========================================= */
 
 .timeline {
@@ -393,10 +393,11 @@ footer {
     padding: 40px 0;
 }
 
+/* Ligne centrale parfaitement centrée */
 .timeline::after {
     content: '';
     position: absolute;
-    width: 1px;
+    width: 2px;
     background: linear-gradient(to bottom, 
         transparent, 
         rgba(0, 242, 255, 0.8) 15%, 
@@ -405,17 +406,56 @@ footer {
     top: 0;
     bottom: 0;
     left: 50%;
+    transform: translateX(-50%);
     box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
 }
 
 .timeline-item {
-    padding: 30px 60px;
+    padding: 20px 60px;
     position: relative;
     width: 50%;
     box-sizing: border-box;
 }
 
-/* Bulles de dates plus marquées */
+/* --- ALTERNANCE GAUCHE / DROITE --- */
+
+/* Éléments impairs (1, 3, 5) -> à GAUCHE */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+/* Éléments pairs (2, 4) -> à DROITE */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+/* --- POINTS DE CONNEXION (DOTS) --- */
+.timeline-dot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: #00f2ff;
+    border: 3px solid #0a0a0f;
+    border-radius: 50%;
+    top: 35px;
+    z-index: 10;
+    box-shadow: 0 0 15px #00f2ff;
+}
+
+/* Point pour les éléments à GAUCHE */
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -7px;
+}
+
+/* Point pour les éléments à DROITE */
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -7px;
+}
+
+/* --- CONTENU --- */
+
 .timeline-date {
     font-family: 'Courier New', monospace;
     color: #00f2ff;
@@ -426,44 +466,47 @@ footer {
     display: block;
 }
 
-/* Cartes de contenu style "Terminal" */
 .timeline-content {
     background: rgba(5, 5, 10, 0.9);
     padding: 30px;
-    border-radius: 2px; /* Coins carrés pour un look plus pro/militaire */
+    border-radius: 2px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-left: 4px solid #00f2ff; /* Accentuation sur le côté */
+    border-left: 4px solid #00f2ff;
     position: relative;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Effet au survol */
+/* Inverser la bordure d'accentuation pour le côté droit pour le style */
+.timeline-item:nth-child(even) .timeline-content {
+    border-left: none;
+    border-right: 4px solid #00f2ff;
+}
+
 .timeline-item:hover .timeline-content {
     transform: scale(1.02);
     border-color: #00f2ff;
     box-shadow: 0 0 30px rgba(0, 242, 255, 0.15);
 }
 
-/* Style de l'étape actuelle (Highlight) */
+/* Étape actuelle */
 .timeline-item.current .timeline-content {
     background: rgba(0, 242, 255, 0.03);
-    border-left: 4px solid #00f2ff;
     animation: pulse-border 2s infinite;
 }
 
 @keyframes pulse-border {
-    0% { border-left-color: #00f2ff; }
-    50% { border-left-color: #004e92; }
-    100% { border-left-color: #00f2ff; }
+    0% { border-color: rgba(0, 242, 255, 0.5); }
+    50% { border-color: #00f2ff; }
+    100% { border-color: rgba(0, 242, 255, 0.5); }
 }
 
-/* Icônes de titre */
 .timeline-content h3 {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 1.1rem;
     margin-bottom: 5px;
+    color: #fff;
 }
 
 .timeline-content .location {
@@ -473,23 +516,24 @@ footer {
     opacity: 0.8;
 }
 
-/* Points de connexion sur la ligne */
-.timeline-dot {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: #00f2ff;
-    border: 4px solid #0a0a0f;
-    border-radius: 50%;
-    top: 40px;
-    z-index: 10;
-    box-shadow: 0 0 15px #00f2ff;
-}
-
-/* Responsive amélioré */
+/* --- RESPONSIVE MOBILE --- */
 @media screen and (max-width: 768px) {
-    .timeline::after { left: 20px; }
-    .timeline-item { width: 100%; padding-left: 50px; text-align: left !important; }
-    .timeline-dot { left: 14px !important; }
-    .timeline-item:nth-child(odd), .timeline-item:nth-child(even) { left: 0; }
+    .timeline::after {
+        left: 20px;
+        transform: none;
+    }
+    .timeline-item {
+        width: 100% !important;
+        left: 0 !important;
+        padding-left: 50px;
+        padding-right: 20px;
+        text-align: left !important;
+    }
+    .timeline-dot {
+        left: 13px !important;
+    }
+    .timeline-item:nth-child(even) .timeline-content {
+        border-right: none;
+        border-left: 4px solid #00f2ff;
+    }
 }
