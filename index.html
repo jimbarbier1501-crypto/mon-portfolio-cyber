@@ -8,46 +8,55 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <div class="overlay"></div>
 
-    <h1 class="main-page-title" data-aos="fade-down">Bienvenue sur mon Portfolio</h1>
-    
-    <section class="home-hero">
-        <div class="hero-content-wrapper"> 
-            
-            <div class="hero-image" data-aos="fade-left">
-                <img src="ma_photo.jpg" alt="Photo de profil professionnelle">
+    <header>
+        <nav>
+            <a href="index.html" class="active">Accueil</a>
+            <a href="competences.html">Compétences</a>
+            <a href="projets.html">Projets</a>
+            <a href="parcours.html">Parcours</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="main-page-title" data-aos="fade-down">Bienvenue sur mon Portfolio</h1>
+        
+        <section class="home-hero">
+            <div class="hero-content-wrapper"> 
+                
+                <div class="hero-image" data-aos="fade-left">
+                    <img src="ma_photo.jpg" alt="Photo de profil professionnelle">
+                </div>
+
+                <div class="hero-text" data-aos="fade-right">
+                    <h2>Jimmy BARBIER - Analyste Cybersécurité</h2>
+                    <p>Passionné par la sécurité des systèmes et le développement Python.</p>
+                    <a href="competences.html" class="cta-button">Voir mes Compétences Clés</a>
+                </div>
+                
             </div>
+        </section>
 
-            <div class="hero-text" data-aos="fade-right">
-                <h2>Titre de mon profil</h2>
-                
-                <p>Ma description courte sera ici.</p>
-                
-                <p>Mes détails de formation seront ici.</p>
-                
-                <a href="#competences" class="cta-button">Voir mes Compétences Clés</a>
+        <section class="quick-links">
+            <h2 data-aos="fade-down" data-aos-delay="200">Un aperçu de mon profil :</h2>
+            <div class="link-cards-container">
+                <a href="projets.html" class="card" data-aos="flip-up" data-aos-delay="300">
+                    <h3>Projets</h3>
+                    <p>Découvrez mes réalisations techniques.</p>
+                </a>
+                <a href="parcours.html" class="card" data-aos="flip-up" data-aos-delay="500">
+                    <h3>Parcours</h3>
+                    <p>Ma formation et mes certifications.</p>
+                </a>
+                <a href="contact.html" class="card" data-aos="flip-up" data-aos-delay="700">
+                    <h3>Contact</h3>
+                    <p>Intéressé ? Contactez-moi.</p>
+                </a>
             </div>
-            
-        </div>
-    </section>
-
-    <section class="quick-links">
-        <h2 data-aos="fade-down" data-aos-delay="200">Un aperçu de mon profil :</h2>
-        <div class="link-cards-container">
-            <a href="#projets" class="card" data-aos="flip-up" data-aos-delay="300">
-                <h3>Projets</h3>
-                <p>Mes réalisations techniques.</p>
-            </a>
-            <a href="#parcours" class="card" data-aos="flip-up" data-aos-delay="500">
-                <h3>Parcours</h3>
-                <p>Ma formation et mes certifications.</p>
-            </a>
-            <a href="#contact" class="card" data-aos="flip-up" data-aos-delay="700">
-                <h3>Contact</h3>
-                <p>Me contacter.</p>
-            </a>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init();</script>
