@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,70 +21,103 @@
         </nav>
     </header>
 
-    <main>
-        <h1 class="main-page-title" data-aos="fade-down">Expertise & Certifications</h1>
-        <p class="section-intro" data-aos="fade-up">Un profil technique axé sur la sécurité, l'infrastructure et l'analyse de menaces.</p>
-    
-        <div class="competence-group-container">
-            
-            <div class="comp-card" data-aos="zoom-in">
-                <span class="level-badge">Analyse & Test</span>
-                <div class="comp-icon"><i class="fas fa-user-secret"></i></div>
-                <h3>Sécurité & Réseaux</h3>
-                <div class="skill-tags">
-                    <span>Nmap</span>
-                    <span>Wireshark</span>
-                    <span>Burp Suite</span>
-                    <span>GNS3</span>
-                    <span>MITM</span>
-                    <span>Phishing</span>
+    <main class="skills-page">
+        <h1 class="glitch-title" data-aos="fade-down">Expertise Technique</h1>
+        <p class="section-intro" data-aos="fade-up">Analyse de menaces, administration sécurisée et investigation numérique.</p>
+        
+        <div class="skills-grid">
+            <section class="skill-category offensive" data-aos="fade-right">
+                <div class="category-header">
+                    <i class="fas fa-user-secret"></i>
+                    <h2>Sécurité & Réseaux</h2>
                 </div>
-                <p class="comp-desc">Analyse de trafic, reconnaissance réseau et simulation d'attaques (injections SQL/XSS).</p>
-            </div>
-    
-            <div class="comp-card" data-aos="zoom-in" data-delay="100">
-                <span class="level-badge">Systèmes</span>
-                <div class="comp-icon"><i class="fas fa-microchip"></i></div>
-                <h3>Infrastructure & Ops</h3>
-                <div class="skill-tags">
-                    <span>Linux (PrivEsc)</span>
-                    <span>Docker</span>
-                    <span>Nginx</span>
-                    <span>PostgreSQL</span>
-                    <span>GitHub</span>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Reconnaissance (Nmap, Shodan)</span><span class="pct">75%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 75%"></div></div>
                 </div>
-                <p class="comp-desc">Déploiement de services, gestion de conteneurs et sécurisation d'environnements Linux.</p>
-            </div>
-    
-            <div class="comp-card" data-aos="zoom-in" data-delay="200">
-                <span class="level-badge">Stratégie</span>
-                <div class="comp-icon"><i class="fas fa-eye"></i></div>
-                <h3>Intelligence & Veille</h3>
-                <div class="skill-tags">
-                    <span>OpenCTI</span>
-                    <span>MITRE ATT&CK</span>
-                    <span>OSINT</span>
-                    <span>Shodan</span>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Analyse Réseau (Wireshark, GNS3)</span><span class="pct">70%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 70%"></div></div>
                 </div>
-                <p class="comp-desc">Suivi des menaces, utilisation de plateformes de Threat Intelligence et recherche de vulnérabilités.</p>
-            </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Audit Web (Burp Suite, OWASP)</span><span class="pct">60%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 60%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>MITM & Phishing</span><span class="pct">55%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 55%"></div></div>
+                </div>
+            </section>
+
+            <section class="skill-category infra" data-aos="fade-up">
+                <div class="category-header">
+                    <i class="fas fa-terminal"></i>
+                    <h2>Infrastructure & Ops</h2>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Linux Admin & PrivEsc</span><span class="pct">80%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 80%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Conteneurisation (Docker)</span><span class="pct">65%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 65%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Web Servers (Nginx, PostgreSQL)</span><span class="pct">60%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 60%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Versioning (Git / GitHub)</span><span class="pct">85%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 85%"></div></div>
+                </div>
+            </section>
+
+            <section class="skill-category defensive" data-aos="fade-left">
+                <div class="category-header">
+                    <i class="fas fa-shield-virus"></i>
+                    <h2>Intelligence & Veille</h2>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Threat Intel (OpenCTI)</span><span class="pct">55%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 55%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Framework MITRE ATT&CK</span><span class="pct">50%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 50%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>OSINT (Investigation)</span><span class="pct">65%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 65%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-info"><span>Scripting (Python / Bash)</span><span class="pct">60%</span></div>
+                    <div class="skill-bar"><div class="progress" style="width: 60%"></div></div>
+                </div>
+            </section>
         </div>
-    
+
         <section class="certifications-section" data-aos="fade-up">
-            <h2>Certifications & Formation</h2>
+            <h2>Certifications & Formations</h2>
             <div class="cert-grid">
                 <div class="cert-item">
                     <i class="fas fa-graduation-cap"></i>
                     <div>
                         <h4>Jedha Bootcamp - Cyber Essentials</h4>
-                        <p>Formation intensive sur les bases de la sécurité informatique.</p>
+                        <p>Formation intensive sur les piliers de la sécurité informatique.</p>
                     </div>
                 </div>
                 <div class="cert-item">
                     <i class="fab fa-leanpub"></i>
                     <div>
                         <h4>TryHackMe - Pre-Security & Cyber 001</h4>
-                        <p>Validation des bases réseaux et des concepts fondamentaux de la cyber.</p>
+                        <p>Validation des fondamentaux réseaux et méthodologies d'attaque.</p>
+                    </div>
+                </div>
+                <div class="cert-item">
+                    <i class="fas fa-code"></i>
+                    <div>
+                        <h4>Fullstack - En cours</h4>
+                        <p>Apprentissage de l'envers du décor pour une meilleure analyse applicative.</p>
                     </div>
                 </div>
             </div>
