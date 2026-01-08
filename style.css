@@ -756,3 +756,19 @@ footer {
     }
 }
 
+/* --- STYLE DU MESSAGE DE STATUT (CENTRAGE) --- */
+#form-status {
+    margin-top: 25px;            /* Espace sous le bouton */
+    display: flex;               /* Utilise flexbox pour le centrage */
+    justify-content: center;     /* Centre horizontalement */
+    align-items: center;         /* Centre verticalement */
+    text-align: center;          /* Centre le texte multi-ligne si besoin */
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    min-height: 30px;            /* Réserve l'espace pour éviter que le bloc ne saute */
+    width: 100%;                 /* Prend toute la largeur du formulaire */
+    text-shadow: 0 0 8px rgba(0, 242, 255, 0.6);
+}
+
