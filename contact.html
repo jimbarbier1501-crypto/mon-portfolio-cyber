@@ -25,7 +25,7 @@
         <h1>Contactez-moi</h1>
         <p class="section-intro">Intéressé par mon profil ou mes projets ? Envoyez-moi un message directement via ce formulaire.</p>
 
-        <form action="#" method="POST" class="contact-form" data-aos="fade-up">
+        <form id="contact-form" action="https://formspree.io/f/mykzrlqj" method="POST" class="contact-form" data-aos="fade-up">
             
             <div class="form-group">
                 <label for="name">Nom complet</label>
@@ -47,7 +47,9 @@
                 <textarea id="message" name="message" class="form-control-textarea" rows="8" placeholder="Votre message..." required></textarea>
             </div>
 
-            <button type="submit" class="cta-button form-submit-button">Envoyer le message</button>
+            <button type="submit" id="submit-btn" class="cta-button form-submit-button">Envoyer le message</button>
+            
+            <p id="form-status" style="margin-top: 20px; font-weight: bold; text-align: center;"></p>
         </form>
     </main>
 
@@ -65,6 +67,41 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <script>
+        AOS.init();
+
+        // Script de gestion d'envoi du formulaire sans changement de page
+        const form = document.getElementById("contact-form");
+        const status = document.getElementById("form-status");
+        const btn = document.getElementById("submit-btn");
+
+        async function handleSubmit(event) {
+          event.preventDefault();
+          btn.innerHTML = "Envoi en cours...";
+          btn.disabled = true;
+
+          const data = new FormData(event.target);
+          
+          const response = await fetch(event.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (response.ok) {
+            status.innerHTML = "✅ Merci ! Votre message a bien été envoyé.";
+            status.style.color = "#00f2ff"; // Ton cyan néon
+            form.reset();
+            btn.innerHTML = "Envoyer le message";
+            btn.disabled = false;
+          } else {
+            status.innerHTML = "❌ Oups ! Il y a eu un problème lors de l'envoi.";
+            status.style.color = "#ff4d4d";
+            btn.innerHTML = "Réessayer";
+            btn.disabled = false;
+          }
+        }
+        form.addEventListener("submit", handleSubmit);
+    </script>
 </body>
 </html>
