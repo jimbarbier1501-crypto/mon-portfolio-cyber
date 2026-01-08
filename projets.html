@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,13 +21,56 @@
         </nav>
     </header>
 
-    <main>
-        <h1 class="main-page-title">Projets et Réalisations</h1>
-        <p class="section-intro" data-aos="fade-down">Voici une sélection de mes projets majeurs, mettant en évidence mon expertise en cybersécurité, Python et automatisation.</p>
+    <main class="projects-page">
+        <h1 class="main-page-title" data-aos="fade-down">Projets & Réalisations</h1>
+        <p class="section-intro" data-aos="fade-up">Démonstrations techniques : de l'infrastructure conteneurisée au développement sécurisé.</p>
 
-        <section class="timeline-container">
-            
-            </section>
+        <section class="projects-grid">
+            <article class="project-card" data-aos="zoom-in">
+                <div class="project-img">
+                    <img src="images/docker-infra.jpg" alt="Infrastructure Docker">
+                    <div class="project-status">Opérationnel</div>
+                </div>
+                <div class="project-info">
+                    <h3>Infrastructure Multi-Services</h3>
+                    <p>Déploiement d'une application To-Do List via <strong>Docker Compose</strong>. Architecture incluant un reverse-proxy <strong>Nginx</strong>, un backend Flask et une base de données <strong>PostgreSQL</strong> sécurisée.</p>
+                    <div class="project-tags">
+                        <span>Docker</span><span>Nginx</span><span>Postgres</span>
+                    </div>
+                    <a href="https://github.com/ton-github" class="btn-project" target="_blank">Consulter le Repo <i class="fab fa-github"></i></a>
+                </div>
+            </article>
+
+            <article class="project-card" data-aos="zoom-in" data-delay="100">
+                <div class="project-img">
+                    <img src="miniature.jpg" alt="Portfolio Cyber">
+                    <div class="project-status">En cours</div>
+                </div>
+                <div class="project-info">
+                    <h3>Cyber Portfolio v1.0</h3>
+                    <p>Conception et développement de ce portfolio. Focus sur l'identité visuelle "Cyber-Ops", l'optimisation du code et l'hébergement sécurisé via <strong>GitHub Pages</strong>.</p>
+                    <div class="project-tags">
+                        <span>HTML/CSS</span><span>JS</span><span>GitHub</span>
+                    </div>
+                    <a href="#" class="btn-project">Site Actuel <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </article>
+
+            <article class="project-card" data-aos="zoom-in" data-delay="200">
+                <div class="project-img">
+                    <img src="images/flask-dev.jpg" alt="App Flask">
+                    <div class="project-status">Labo</div>
+                </div>
+                <div class="project-info">
+                    <h3>Développement Micro-services</h3>
+                    <p>Création d'applications web avec le framework <strong>Flask</strong>. Gestion des routes, des templates Jinja2 et manipulation de données dynamiques via Python.</p>
+                    <div class="project-tags">
+                        <span>Python</span><span>Flask</span><span>Backend</span>
+                    </div>
+                    <a href="https://github.com/ton-github" class="btn-project" target="_blank">Code Source <i class="fab fa-github"></i></a>
+                </div>
+            </article>
+        </section>
     </main>
 
     <footer>
