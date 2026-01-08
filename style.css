@@ -1,0 +1,185 @@
+/* ========================================= */
+/* 1. STYLES GÉNÉRAUX & COULEURS (DARK MODE) */
+/* ========================================= */
+
+:root {
+    --color-background: #1e1e1e; 
+    --color-primary: #00bcd4;    /* Ton Cyan fétiche */
+    --color-text: #e0e0e0;       
+    --color-secondary-bg: #2c2c2c; 
+    --color-nav-hover: #3a3a3a;
+    --color-footer: #151515;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding-top: 60px;
+}
+
+/* On garde l'idée du voile sombre */
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: -1;
+}
+
+h1, h2 {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-secondary-bg); 
+    padding-bottom: 10px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* ========================================= */
+/* 2. NAVIGATION */
+/* ========================================= */
+
+header {
+    background-color: var(--color-footer);
+    border-bottom: 1px solid var(--color-secondary-bg);
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav a {
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+nav a:hover, nav a.active {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+/* ========================================= */
+/* 3. COMPÉTENCES, CARTES ET TIMELINE */
+/* ========================================= */
+
+.competence-group-container, .link-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.competence-group, .card, .timeline-content {
+    background-color: var(--color-secondary-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 3px solid var(--color-primary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.competence-group:hover, .card:hover {
+    transform: translateY(-5px);
+}
+
+.competences-list {
+    list-style-type: '👉'; 
+    padding-left: 20px;
+}
+
+/* Styles spécifiques pour la Timeline (Parcours) */
+.timeline-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: var(--color-primary);
+    top: 0; bottom: 0; left: 50%;
+    margin-left: -3px;
+}
+
+/* ========================================= */
+/* 4. ACCUEIL (HERO SECTION) */
+/* ========================================= */
+
+.home-hero {
+    padding: 30px;
+    background-color: var(--color-secondary-bg);
+    border-radius: 10px;
+    border-left: 5px solid var(--color-primary);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+    object-fit: cover;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* ========================================= */
+/* 5. FORMULAIRE DE CONTACT & RESPONSIVE */
+/* ========================================= */
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-control, .form-control-textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .home-hero, .competence-group-container, .link-cards-container {
+        flex-direction: column;
+    }
+    .timeline-container::after { left: 31px; }
+}
