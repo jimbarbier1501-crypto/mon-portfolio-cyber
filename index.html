@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio Cybersécurité</title>
+    <title>Jimmy BARBIER - Portfolio Cybersécurité</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -22,19 +22,33 @@
     </header>
 
     <main>
-        <h1 class="main-page-title" data-aos="fade-down">Bienvenue sur mon Portfolio</h1>
+        <h1 class="main-page-title" data-aos="fade-down">TERMINAL_ACCUEIL v1.0</h1>
         
         <section class="home-hero">
             <div class="hero-content-wrapper"> 
                 
-                <div class="hero-image" data-aos="fade-left">
-                    <img src="ma_photo.jpg" alt="Photo de profil professionnelle">
+                <div class="hero-image" data-aos="fade-right">
+                    <div class="image-border-effect">
+                        <img src="ma_photo.jpg" alt="Jimmy BARBIER - Photo de profil professionnelle">
+                    </div>
                 </div>
 
-                <div class="hero-text" data-aos="fade-right">
-                    <h2>Jimmy BARBIER - Analyste Cybersécurité</h2>
-                    <p>Passionné par la sécurité des systèmes et le développement Python.</p>
-                    <a href="competences.html" class="cta-button">Voir mes Compétences Clés</a>
+                <div class="hero-text" data-aos="fade-left">
+                    <h2 class="glitch-text">Jimmy BARBIER</h2>
+                    <h3 class="role-title">Analyste Cybersécurité & Spécialiste Infrastructures</h3>
+                    
+                    <p class="hero-description">
+                        Passionné par la sécurisation des systèmes, je me spécialise dans le déploiement 
+                        d'**environnements conteneurisés sécurisés**. <br><br>
+                        Mon expertise s'appuie sur la conception d'architectures multi-services robustes utilisant 
+                        **Docker**, **Nginx** et **PostgreSQL**, ainsi que sur l'automatisation de processus via 
+                        des scripts **Flask** pour protéger et optimiser les flux de données.
+                    </p>
+
+                    <div class="hero-ctas">
+                        <a href="projets.html" class="cta-button secondary">Consulter mes réalisations</a>
+                        <a href="contact.html" class="cta-button primary">Initialiser le Contact</a>
+                    </div>
                 </div>
                 
             </div>
@@ -55,6 +69,11 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
 </body>
 </html>
